@@ -3,28 +3,32 @@
     margin: 0px;
     padding: 0px;
 
-    user-select: none;
-
+    /*user-select: none;
+*/
 
 }
 
-
 .container {
     width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, skyblue, orange);
     padding-top: 100px;
+    padding-bottom: 100px;
+
+    background: linear-gradient(135deg, rgb(212, 212, 212), orange);
 
 }
 
 
 .todo_app {
-    width: 100%;
-    max-width: 540px;
+    width: 700px;
+    max-width: 90%;
     background: #fff;
     padding: 40px 30px 70px;
     border-radius: 10px;
     margin: 0 auto 20px;
+    position: relative;
+
+
+    background: linear-gradient(white);
 
 
 }
@@ -45,69 +49,327 @@
 }
 
 
-.row {
+
+
+/*
+==================    input section   ================================
+*/
+
+
+
+.input_section {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #e9e9e9;
-    padding-left: 20px;
-    border-radius: 30px;
-    margin-bottom: 20px;
+    gap: 10px;
+
+    margin-bottom: 20PX;
 
 }
 
-
-input {
-    border: none;
+.input_section .user_task_input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 6px;
     outline: 0;
-    padding: 10px;
-    background: transparent;
-    font-size: 16px;
+    border: 1px solid #bbb1b1;
 }
 
 
-button {
-    border: 0;
+.input_section .user_date_input {
+    width: 120px;
+    font-size: small;
+    padding: 8px 12px;
+    /*  font-size: 20px;*/
+    border-radius: 6px;
     outline: 0;
-    padding: 10px 40px;
-    font-size: 16px;
-    border-radius: 50px;
-    background-color: #f58b22;
-    color: white;
+    border: 1px solid #bbb1b1;
     cursor: pointer;
-
 }
 
-ul li {
-    list-style: none;
+
+
+.input_section .user_priority_option {
+    width: 108px;
+    padding: 8px 12px;
     font-size: 20px;
-    /*border: 1px solid red;*/
-    padding: 10px 40px;
-    position: relative;
-
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
     cursor: pointer;
-
-    user-select: none;
 }
 
-ul li::before{
-    position: absolute;
-    content: '';
-    background-image: url(images/unchecked.png);
+
+
+.input_section .add_button {
+    width: 40px;
+    padding: px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #a9a6a6;
+    font-size: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.input_section .add_button:hover {
+    background-color: rgb(228, 223, 223);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+============  Head Line =====================
+
+*/
+
+
+.headline img {
     width: 25px;
     height: 25px;
-    /*background-color: red;*/
-    background-size: cover;
-    border-radius: 50%;
-    left: 3px;
-    top: 9px;
+}
+
+.headline .delete_image {
+    width: 40px;
+    height: 40px;
+}
+
+
+.headline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headline .task {
+    flex: 1;
+
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+
+    font-weight: bold;
+
+
 
 }
 
-ul li.checked{
-    text-decoration: line-through;
+.headline .last_date {
+    width: 120px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+    font-weight: bold;
 }
 
-ul li.checked::before{
-    background-image: url(images/checked.png);
+
+.headline .priority {
+    width: 108px;
+
+
+
+
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+
+    font-weight: bold;
+
+
+
+
+}
+
+
+.headline .delete_image {
+    width: 40px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+    font-weight: bold;
+    DISPLAY: FLEX;
+    ALIGN-ITEMS: center;
+    justify-content: center;
+
+}
+
+.headline {
+    margin-bottom: 30px;
+}
+
+
+/*
+================  List container row box ================
+*/
+
+.row .list_container li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.row .list_container li .task {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+}
+
+
+
+.row .list_container .date {
+    width: 120px;
+    padding: 8px 12px;
+    font-size: small;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+}
+
+
+
+.row .list_container .priority {
+    width: 108px;
+
+
+
+
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+
+}
+
+
+
+
+
+
+.row .list_container .delete {
+    width: 40px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+    font-weight: bold;
+    DISPLAY: FLEX;
+    ALIGN-ITEMS: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+
+.row .list_container .delete:hover{
+    background-color: rgb(177, 175, 175);
+}
+
+
+/*  adding checked button before each row */
+
+
+
+.row .list_container li{
+    position: relative;
+    padding-left: 33px;
+}
+
+
+.row .list_container li::before{
+        position: absolute;
+        content: '';
+        width: 27px;
+        height: 27px;
+        top: 8px;
+        left: 0px;
+        background-image: url('images/unchecked.png');
+        /* color: red; */
+        background-size: cover;
+        /* background-color: green; */
+        /* background: center; */
+        border-radius: 50%;
+
+
+
+
+
+
+
+}
+
+
+.row .list_container li.checked::before{
+    background-image: url('images/checked.png');
+}
+
+.row .list_container li.checked{
+    position: relative;
+
+}
+
+
+
+.row .list_container li.checked::after{
+    position: absolute;
+    content: '';
+    height: 1px;
+    background-color: black;
+
+    top: 50%;
+    left: 33px;
+    right: 0px;
+
+    
+}
+
+
+.row{
+    margin-bottom: 30px;
+}
+
+
+/*   
+====================== delete button ====================
+*/
+
+
+.delete_all{
+    display: block;
+    margin-left: auto;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #afacac;
+
+}
+
+
+
+.delete_all:hover{
+    background-color: rgb(201, 199, 199);
 }
