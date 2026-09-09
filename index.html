@@ -46,14 +46,28 @@
             <div class="input_section">
                 <input type="text" placeholder="add your text" class="user_task_input">
                 <input type="date" class="user_date_input">
+                
                 <select class="user_priority_option">
                     <option value="" disabled selected>Priority</option>
                     <option value="low">Low</option>
                     <option value="mid">Mid</option>
                     <option value="high">High</option>
                 </select>
+
+
+                
                 <button class="add_button">+</button>
 
+            </div>
+
+
+            <div>
+              <select class="sort_priority">
+                <option value="" disabled selected>Priority Sorting</option>
+                <option value="hight_to_low">High -> Low</option>
+                <option value="low_to_high">Low -> High</option>
+
+              </select>
             </div>
 
 
@@ -74,7 +88,7 @@
                   <!--   <li>class=" checked"
                         <span class="task">JS learning</span>
                         <span class="date">16 sept 2026</span>
-                        <span class="priority">Low/Mid/High</span>
+                        <span class="priorityValue">Low/Mid/High</span>
                         <span class="delete">x</span>
                     </li>
 

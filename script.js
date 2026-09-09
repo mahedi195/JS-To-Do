@@ -12,6 +12,82 @@ console.log(date_class.value);
 
 
 
+
+/*
+========================   sorting priority ===========================
+*/
+
+
+
+const user_priority_option=document.querySelector('.user_priority_option');
+
+const sorted_priority_button=document.querySelector('.sort_priority');
+
+sorted_priority_button.addEventListener('click',function(event){
+    const task_arr=[...list_container.querySelectorAll('li')];
+
+    if(sorted_priority_button.value=='hight_to_low')
+    {
+        task_arr.sort(function(a,b)
+        {
+
+            const p1=a.querySelector('.priorityValue').innerHTML;
+            const p2=b.querySelector('.priorityValue').innerHTML;
+
+            const order={
+                high:1,
+                mid:2,
+                low:3,
+            }
+
+            return order[p1]-order[p2];
+
+        })
+
+
+
+        task_arr.forEach(function(ta)
+        {
+            list_container.append(ta);
+        })
+
+    }
+    else if(sorted_priority_button.value=='low_to_high')
+    {
+
+
+        task_arr.sort(function(a,b)
+        {
+
+            const p1=a.querySelector('.priorityValue').innerHTML;
+            const p2=b.querySelector('.priorityValue').innerHTML;
+
+            const order={
+                high:1,
+                mid:2,
+                low:3,
+            }
+
+            return order[p2]-order[p1];
+
+        })
+
+
+
+        task_arr.forEach(function(ta)
+         {
+            list_container.append(ta);
+        })
+
+
+    }
+
+user_priority_option.value="";
+
+
+})
+
+
 add_button.addEventListener('click', function (event) {
 
     const list = document.createElement('li');
@@ -76,7 +152,7 @@ add_button.addEventListener('click', function (event) {
     }
 
     const span_priority = document.createElement('span');
-    span_priority.className = 'priority';
+    span_priority.className = 'priorityValue';
     span_priority.innerHTML = user_priority_input;
 
     list.append(span_priority);
@@ -112,8 +188,7 @@ const list_container=document.querySelector('.list_container');
 
 list_container.addEventListener('click', function (event) {
 
-    if (event.target.tagName == 'LI')
-    {
+    if (event.target.tagName == 'LI') {
         event.target.classList.toggle('checked');
         if (event.target.classList.contains('checked'))
             list_container.append(event.target);
@@ -132,9 +207,8 @@ list_container.addEventListener('click', function (event) {
 
 const delete_all = document.querySelector('.delete_all');
 
-delete_all.addEventListener('click',function(event)
-{
-    list_container.innerHTML="";
+delete_all.addEventListener('click', function (event) {
+    list_container.innerHTML = "";
     saveTask();
 })
 

@@ -284,7 +284,7 @@
 
 
 
-.row .list_container .delete:hover{
+.row .list_container .delete:hover {
     background-color: rgb(177, 175, 175);
 }
 
@@ -293,25 +293,25 @@
 
 
 
-.row .list_container li{
+.row .list_container li {
     position: relative;
     padding-left: 33px;
 }
 
 
-.row .list_container li::before{
-        position: absolute;
-        content: '';
-        width: 27px;
-        height: 27px;
-        top: 8px;
-        left: 0px;
-        background-image: url('images/unchecked.png');
-        /* color: red; */
-        background-size: cover;
-        /* background-color: green; */
-        /* background: center; */
-        border-radius: 50%;
+.row .list_container li::before {
+    position: absolute;
+    content: '';
+    width: 27px;
+    height: 27px;
+    top: 8px;
+    left: 0px;
+    background-image: url('images/unchecked.png');
+    /* color: red; */
+    background-size: cover;
+    /* background-color: green; */
+    /* background: center; */
+    border-radius: 50%;
 
 
 
@@ -322,18 +322,18 @@
 }
 
 
-.row .list_container li.checked::before{
+.row .list_container li.checked::before {
     background-image: url('images/checked.png');
 }
 
-.row .list_container li.checked{
+.row .list_container li.checked {
     position: relative;
 
 }
 
 
 
-.row .list_container li.checked::after{
+.row .list_container li.checked::after {
     position: absolute;
     content: '';
     height: 1px;
@@ -343,11 +343,11 @@
     left: 33px;
     right: 0px;
 
-    
+
 }
 
 
-.row{
+.row {
     margin-bottom: 30px;
 }
 
@@ -357,7 +357,7 @@
 */
 
 
-.delete_all{
+.delete_all {
     display: block;
     margin-left: auto;
     font-size: 20px;
@@ -370,6 +370,17 @@
 
 
 
-.delete_all:hover{
+.delete_all:hover {
     background-color: rgb(201, 199, 199);
+}
+
+
+
+/*   sort priority */
+
+.sort_priority {
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 5px;
+
 }
