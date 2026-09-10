@@ -17,75 +17,111 @@ console.log(date_class.value);
 ========================   sorting priority ===========================
 */
 
+const sort_priority_class = document.querySelector('.sort_priority');
+sort_priority_class.addEventListener('click', function (event) {
 
+    const task_arr = [...list_container.querySelectorAll('li')];
 
-const user_priority_option=document.querySelector('.user_priority_option');
-
-const sorted_priority_button=document.querySelector('.sort_priority');
-
-sorted_priority_button.addEventListener('click',function(event){
-    const task_arr=[...list_container.querySelectorAll('li')];
-
-    if(sorted_priority_button.value=='hight_to_low')
-    {
-        task_arr.sort(function(a,b)
-        {
-
-            const p1=a.querySelector('.priorityValue').innerHTML;
-            const p2=b.querySelector('.priorityValue').innerHTML;
-
-            const order={
-                high:1,
-                mid:2,
-                low:3,
+    if (sort_priority_class.value == 'hight_to_low') {
+        task_arr.sort(function (a, b) {
+            const priorityA = a.querySelector('.priorityValue').innerHTML;
+            const priorityB = b.querySelector('.priorityValue').innerHTML;
+            const order = {
+                high: 1,
+                mid: 2,
+                low: 3
             }
 
-            return order[p1]-order[p2];
-
+            return order[priorityA] - order[priorityB];
         })
 
 
-
-        task_arr.forEach(function(ta)
-        {
-            list_container.append(ta);
+        task_arr.forEach(function (new_list) {
+            list_container.append(new_list);
         })
+
+
 
     }
-    else if(sorted_priority_button.value=='low_to_high')
-    {
-
-
-        task_arr.sort(function(a,b)
-        {
-
-            const p1=a.querySelector('.priorityValue').innerHTML;
-            const p2=b.querySelector('.priorityValue').innerHTML;
-
-            const order={
-                high:1,
-                mid:2,
-                low:3,
+    else if (sort_priority_class.value == 'low_to_high') {
+        task_arr.sort(function (a, b) {
+            const priorityA = a.querySelector('.priorityValue').innerHTML;
+            const priorityB = b.querySelector('.priorityValue').innerHTML;
+            const order = {
+                high: 1,
+                mid: 2,
+                low: 3
             }
 
-            return order[p2]-order[p1];
-
+            return order[priorityB] - order[priorityA];
         })
 
 
-
-        task_arr.forEach(function(ta)
-         {
-            list_container.append(ta);
+        task_arr.forEach(function (new_list) {
+            list_container.append(new_list);
         })
+
 
 
     }
 
-user_priority_option.value="";
+
+    sort_priority_class.value = "";
 
 
 })
+
+
+
+
+/*
+=================search task ============================
+
+*/
+
+const search_task_class = document.querySelector('.search_task');
+search_task_class.addEventListener('input', function (event) {
+
+    let seach_text = search_task_class.value;
+    seach_text = seach_text.toLowerCase();
+
+    const task_arr = [...list_container.querySelectorAll('li')];
+
+    task_arr.forEach(function (i_th_list) {
+
+        let i_th_task = i_th_list.querySelector('.task').innerHTML;
+        i_th_task = i_th_task.toLowerCase();
+
+        if (i_th_task.includes(seach_text))
+            i_th_list.style.display = 'flex';
+
+        else
+            i_th_list.style.display = 'none';
+
+
+
+
+    })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 add_button.addEventListener('click', function (event) {
@@ -154,6 +190,14 @@ add_button.addEventListener('click', function (event) {
     const span_priority = document.createElement('span');
     span_priority.className = 'priorityValue';
     span_priority.innerHTML = user_priority_input;
+
+    if (priority_class.value == 'High')
+        span_priority.classList.add('highh');
+    else if (priority_class.value == 'Mid')
+        span_priority.classList.add('midd');
+    else if (priority_class.value == 'Low')
+        span_priority.classList.add('loww');
+
 
     list.append(span_priority);
 

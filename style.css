@@ -376,11 +376,68 @@
 
 
 
+/* ===============================
+sorting section 
+================================
+*/
+
+.sort_section {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 10px;
+}
+
 /*   sort priority */
 
-.sort_priority {
-    font-size: 16px;
-    padding: 6px;
-    border-radius: 5px;
+.priorityValue {
+    width: 108px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #bbb1b1;
+}
 
+
+.sort_priority {
+    font-size: 18px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: 0;
+    border: 1px slod gray;
+    border: 1px solid #cdcccc;
+}
+
+
+.priorityValue.highh {
+    background-color: red;
+    color: white;
+}
+
+
+.priorityValue.midd {
+    background-color: orange;
+    color: white;
+}
+
+
+
+.priorityValue.loww {
+    background-color: green;
+    color: white;
+}
+
+
+
+/*
+============= Search task ==============
+*/
+
+
+.search_task {
+    font-size: 17px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: 0;
+    border: 1px solid rgb(209, 208, 208);
 }
