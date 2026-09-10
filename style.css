@@ -441,3 +441,69 @@ sorting section
     outline: 0;
     border: 1px solid rgb(209, 208, 208);
 }
+
+
+
+
+
+
+/*           no taks message show */
+
+
+
+.no_task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-style: italic; */
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*        dark mode ==================================== */
+
+
+
+.project_name_and_toggle_image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.project_name_and_toggle_image img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+
+.project_name_and_toggle_image .dark_mode_image {
+    border: none;
+    /* outline: 0; */
+    background: transparent;
+    cursor: pointer;
+
+
+}
+
+
+body.dark .todo_app{
+    background:black;
+    color: white;
+}

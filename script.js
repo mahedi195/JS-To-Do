@@ -13,6 +13,15 @@ console.log(date_class.value);
 
 
 
+
+
+
+
+
+
+
+
+
 /*
 ========================   sorting priority ===========================
 */
@@ -27,9 +36,9 @@ sort_priority_class.addEventListener('click', function (event) {
             const priorityA = a.querySelector('.priorityValue').innerHTML;
             const priorityB = b.querySelector('.priorityValue').innerHTML;
             const order = {
-                high: 1,
-                mid: 2,
-                low: 3
+                High: 1,
+                Mid: 2,
+                Low: 3
             }
 
             return order[priorityA] - order[priorityB];
@@ -48,9 +57,9 @@ sort_priority_class.addEventListener('click', function (event) {
             const priorityA = a.querySelector('.priorityValue').innerHTML;
             const priorityB = b.querySelector('.priorityValue').innerHTML;
             const order = {
-                high: 1,
-                mid: 2,
-                low: 3
+                High: 1,
+                Mid: 2,
+                Low: 3
             }
 
             return order[priorityB] - order[priorityA];
@@ -78,7 +87,7 @@ sort_priority_class.addEventListener('click', function (event) {
 =================search task ============================
 
 */
-
+const no_task_matched = document.querySelector('.no_task');
 const search_task_class = document.querySelector('.search_task');
 search_task_class.addEventListener('input', function (event) {
 
@@ -87,21 +96,29 @@ search_task_class.addEventListener('input', function (event) {
 
     const task_arr = [...list_container.querySelectorAll('li')];
 
+    let matched_taks = 0;
+
     task_arr.forEach(function (i_th_list) {
 
         let i_th_task = i_th_list.querySelector('.task').innerHTML;
         i_th_task = i_th_task.toLowerCase();
 
-        if (i_th_task.includes(seach_text))
+        if (i_th_task.includes(seach_text)) {
             i_th_list.style.display = 'flex';
-
+            matched_taks++;
+        }
         else
             i_th_list.style.display = 'none';
 
 
-
-
     })
+
+    if (matched_taks == 0) //document.querySelector('.no_task').style.display = 'flex';
+        no_task_matched.style.display = 'flex';
+
+    else //document.querySelector('.no_task').style.display = 'none';
+        no_task_matched.style.display = 'none';
+
 
 })
 
@@ -121,7 +138,11 @@ search_task_class.addEventListener('input', function (event) {
 
 
 
+/* 
 
+=================   task addition ==========================
+
+*/
 
 
 add_button.addEventListener('click', function (event) {
@@ -221,6 +242,7 @@ add_button.addEventListener('click', function (event) {
 
 
     saveTask();
+    no_task_message();
 })
 
 
@@ -236,24 +258,80 @@ list_container.addEventListener('click', function (event) {
         event.target.classList.toggle('checked');
         if (event.target.classList.contains('checked'))
             list_container.append(event.target);
-        else list_container.prepend(event.target);
-    }
+        else
+            list_container.prepend(event.target);
 
-    else if (event.target.classList.contains('delete'))
-        event.target.parentElement.remove();
+    }
+    else if (event.target.classList.contains('delete')) {
+        const delete_task = confirm('Are you sure to delete this task ? ');
+        if (delete_task)
+            event.target.parentElement.remove();
+
+    }
 
 
     saveTask();
+    no_task_message();
 })
 
 
 
+
+/* =========================
+
+                              Delete all
+
+===================================== */
 
 const delete_all = document.querySelector('.delete_all');
 
 delete_all.addEventListener('click', function (event) {
-    list_container.innerHTML = "";
+
+
+    const all_task_delete = confirm('Are you sure to delete all task ? ');
+    if (all_task_delete)
+        list_container.innerHTML = "";
+
     saveTask();
+    no_task_message();
+})
+
+
+
+
+
+/*    empty state message ********  =============  */
+
+function no_task_message() {
+    const no_taks_class = document.querySelector('.no_task');
+    const total_taks = list_container.querySelectorAll('li').length;
+    if (total_taks == 0)
+        no_taks_class.style.display = 'flex';
+    else no_taks_class.style.display = 'none';
+
+}
+
+
+
+
+/*
+=========================== dark mode  ============================ 
+*/
+
+
+const dark_button_class = document.querySelector('.dark_mode_image');
+console.log(dark_button_class);
+const dark_image = document.querySelector('.dark_mode_image img');
+
+
+dark_button_class.addEventListener('click', function () {
+    document.body.classList.toggle('dark');
+
+    if (document.body.classList.contains('dark'))
+        dark_image.src = "images/sun.avif";
+    else dark_image.src = "images/moon.jpg";
+
+
 })
 
 
@@ -265,6 +343,10 @@ delete_all.addEventListener('click', function (event) {
 
 
 
+/* ===================
+                        dELETE Task
+
+*/
 
 
 
@@ -275,40 +357,11 @@ delete_all.addEventListener('click', function (event) {
 
 
 
+/* 
+=================  save task ==============================
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 function saveTask() {
@@ -323,7 +376,7 @@ function getTask() {
 }
 
 getTask();
-
+no_task_message();
 
 
 

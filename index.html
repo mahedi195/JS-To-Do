@@ -14,9 +14,17 @@
     <div class="container">
         <div class="todo_app">
 
-            <h2>To-Do List
-                <img src="images/icon.png">
-            </h2>
+
+            <div class="project_name_and_toggle_image">
+                <h2>To-Do List
+                    <img src="images/icon.png">
+                </h2>
+
+                <button class="dark_mode_image"><img src="images/moon.jpg"></button>
+            </div>
+
+
+
 
             <div class="progress_section">
 
@@ -39,6 +47,7 @@
                 </div>
 
             </div>
+            
 
 
 
@@ -46,7 +55,7 @@
             <div class="input_section">
                 <input type="text" placeholder="add your text" class="user_task_input">
                 <input type="date" class="user_date_input">
-                
+
                 <select class="user_priority_option">
                     <option value="" disabled selected>Priority</option>
                     <option value="Low">Low</option>
@@ -55,23 +64,23 @@
                 </select>
 
 
-                
+
                 <button class="add_button">+</button>
 
             </div>
 
 
             <div class="sort_section">
-              <select class="sort_priority">
-                <option value="" disabled selected>Priority Sorting</option>
-                <option value="hight_to_low">High -> Low</option>
-                <option value="low_to_high">Low -> High</option>
+                <select class="sort_priority">
+                    <option value="" disabled selected>Priority Sorting</option>
+                    <option value="hight_to_low">High -> Low</option>
+                    <option value="low_to_high">Low -> High</option>
 
-              </select>
+                </select>
 
 
 
-              <input class="search_task" placeholder="Search task...">
+                <input class="search_task" placeholder="Search task...">
             </div>
 
 
@@ -89,7 +98,7 @@
             <div class="row">
                 <ul class="list_container">
 
-                  <!--   <li>class=" checked"
+                    <!--   <li>class=" checked"
                         <span class="task">JS learning</span>
                         <span class="date">16 sept 2026</span>
                         <span class="priorityValue">Low/Mid/High</span>
@@ -99,6 +108,9 @@
                 -->
                 </ul>
             </div>
+
+
+            <p class="no_task">No tasks to show</p>
 
             <button class="delete_all">Delete All</button>
 
