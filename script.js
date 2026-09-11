@@ -36,164 +36,7 @@ pregress_count_and_circle.querySelector(' p').innerHTML = completed_task + '/' +
 
 }
 
-/*
 
-=====================  sort by date =================
-
-*/
-
-
-const sort_by_date_class = document.querySelector('.sort_by_date');
-
-sort_by_date_class.addEventListener('click', function (event) {
-
-    const task_arr = [...list_container.querySelectorAll('li')];
-    if (sort_by_date_class.value == 'earliest_to_latest') {
-        task_arr.sort(function (a, b) {
-
-            const date1 = a.querySelector('.date').innerHTML;
-            const date2 = b.querySelector('.date').innerHTML;
-
-
-            return new Date(date1) - new Date(date2);
-
-
-        })
-
-        task_arr.forEach(function (row) {
-            list_container.append(row);
-        })
-    }
-    else if (sort_by_date_class.value == 'latest_to_earliest') {
-
-        task_arr.sort(function (a, b) {
-
-            const date1 = a.querySelector('.date').innerHTML;
-            const date2 = b.querySelector('.date').innerHTML;
-
-
-            return new Date(date2) - new Date(date1);
-
-
-        })
-
-        task_arr.forEach(function (row) {
-            list_container.append(row);
-        })
-
-
-    }
-
-
-})
-
-
-
-
-
-
-
-
-
-/*
-========================   sorting priority ===========================
-*/
-
-const sort_priority_class = document.querySelector('.sort_priority');
-sort_priority_class.addEventListener('click', function (event) {
-
-    const task_arr = [...list_container.querySelectorAll('li')];
-
-    if (sort_priority_class.value == 'hight_to_low') {
-        task_arr.sort(function (a, b) {
-            const priorityA = a.querySelector('.priorityValue').innerHTML;
-            const priorityB = b.querySelector('.priorityValue').innerHTML;
-            const order = {
-                High: 1,
-                Mid: 2,
-                Low: 3
-            }
-
-            return order[priorityA] - order[priorityB];
-        })
-
-
-        task_arr.forEach(function (new_list) {
-            list_container.append(new_list);
-        })
-
-
-
-    }
-    else if (sort_priority_class.value == 'low_to_high') {
-        task_arr.sort(function (a, b) {
-            const priorityA = a.querySelector('.priorityValue').innerHTML;
-            const priorityB = b.querySelector('.priorityValue').innerHTML;
-            const order = {
-                High: 1,
-                Mid: 2,
-                Low: 3
-            }
-
-            return order[priorityB] - order[priorityA];
-        })
-
-
-        task_arr.forEach(function (new_list) {
-            list_container.append(new_list);
-        })
-
-
-
-    }
-
-
-    sort_priority_class.value = "";
-
-
-})
-
-
-
-
-/*
-=================search task ============================
-
-*/
-const no_task_matched = document.querySelector('.no_task');
-const search_task_class = document.querySelector('.search_task');
-search_task_class.addEventListener('input', function (event) {
-
-    let seach_text = search_task_class.value;
-    seach_text = seach_text.toLowerCase();
-
-    const task_arr = [...list_container.querySelectorAll('li')];
-
-    let matched_taks = 0;
-
-    task_arr.forEach(function (i_th_list) {
-
-        let i_th_task = i_th_list.querySelector('.task').innerHTML;
-        i_th_task = i_th_task.toLowerCase();
-
-        if (i_th_task.includes(seach_text)) {
-            i_th_list.style.display = 'flex';
-            matched_taks++;
-        }
-        else
-            i_th_list.style.display = 'none';
-
-
-    })
-
-    if (matched_taks == 0) //document.querySelector('.no_task').style.display = 'flex';
-        no_task_matched.style.display = 'flex';
-
-    else //document.querySelector('.no_task').style.display = 'none';
-        no_task_matched.style.display = 'none';
-
-
-})
 
 
 
@@ -313,8 +156,187 @@ add_button.addEventListener('click', function (event) {
 
 
 
+
+
+
+
+
+
+
 /*
-const list_container=document.querySelector('.list_container');
+========================   sorting priority ===========================
+*/
+
+const sort_priority_class = document.querySelector('.sort_priority');
+sort_priority_class.addEventListener('click', function (event) {
+
+    const task_arr = [...list_container.querySelectorAll('li')];
+
+    if (sort_priority_class.value == 'hight_to_low') {
+        task_arr.sort(function (a, b) {
+            const priorityA = a.querySelector('.priorityValue').innerHTML;
+            const priorityB = b.querySelector('.priorityValue').innerHTML;
+            const order = {
+                High: 1,
+                Mid: 2,
+                Low: 3
+            }
+
+            return order[priorityA] - order[priorityB];
+        })
+
+
+        task_arr.forEach(function (new_list) {
+            list_container.append(new_list);
+        })
+
+
+
+    }
+    else if (sort_priority_class.value == 'low_to_high') {
+        task_arr.sort(function (a, b) {
+            const priorityA = a.querySelector('.priorityValue').innerHTML;
+            const priorityB = b.querySelector('.priorityValue').innerHTML;
+            const order = {
+                High: 1,
+                Mid: 2,
+                Low: 3
+            }
+
+            return order[priorityB] - order[priorityA];
+        })
+
+
+        task_arr.forEach(function (new_list) {
+            list_container.append(new_list);
+        })
+
+
+
+    }
+
+
+    sort_priority_class.value = "";
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*???????????>>>>>>>>>.
+
+=====================  sort by date =================
+
+*/
+
+
+const sort_by_date_class = document.querySelector('.sort_by_date');
+
+sort_by_date_class.addEventListener('click', function (event) {
+
+    const task_arr = [...list_container.querySelectorAll('li')];
+    if (sort_by_date_class.value == 'earliest_to_latest') {
+        task_arr.sort(function (a, b) {
+
+            const date1 = a.querySelector('.date').innerHTML;
+            const date2 = b.querySelector('.date').innerHTML;
+
+
+            return new Date(date1) - new Date(date2);
+
+
+        })
+
+        task_arr.forEach(function (row) {
+            list_container.append(row);
+        })
+    }
+    else if (sort_by_date_class.value == 'latest_to_earliest') {
+
+        task_arr.sort(function (a, b) {
+
+            const date1 = a.querySelector('.date').innerHTML;
+            const date2 = b.querySelector('.date').innerHTML;
+
+
+            return new Date(date2) - new Date(date1);
+
+
+        })
+
+        task_arr.forEach(function (row) {
+            list_container.append(row);
+        })
+
+
+    }
+
+
+})
+
+
+
+
+
+
+/*
+=================search task ============================
+
+*/
+const no_task_matched = document.querySelector('.no_task');
+const search_task_class = document.querySelector('.search_task');
+search_task_class.addEventListener('input', function (event) {
+
+    let seach_text = search_task_class.value;
+    seach_text = seach_text.toLowerCase();
+
+    const task_arr = [...list_container.querySelectorAll('li')];
+
+    let matched_taks = 0;
+
+    task_arr.forEach(function (i_th_list) {
+
+        let i_th_task = i_th_list.querySelector('.task').innerHTML;
+        i_th_task = i_th_task.toLowerCase();
+
+        if (i_th_task.includes(seach_text)) {
+            i_th_list.style.display = 'flex';
+            matched_taks++;
+        }
+        else
+            i_th_list.style.display = 'none';
+
+
+    })
+
+    if (matched_taks == 0) //document.querySelector('.no_task').style.display = 'flex';
+        no_task_matched.style.display = 'flex';
+
+    else //document.querySelector('.no_task').style.display = 'none';
+        no_task_matched.style.display = 'none';
+
+
+})
+
+
+
+
+/*
+ ==============  task row- check, uncheck toggle
+                 delete single row(task)
+
 */
 
 list_container.addEventListener('click', function (event) {
@@ -330,7 +352,7 @@ list_container.addEventListener('click', function (event) {
     else if (event.target.classList.contains('delete')) {
 
         const delete_task = confirm('Are you sure to delete this task ? ');
-        
+
         if (delete_task)
             event.target.parentElement.remove();
 
@@ -409,22 +431,6 @@ dark_button_class.addEventListener('click', function () {
 
 
 
-
-
-/* ===================
-                        dELETE Task
-
-*/
-
-
-
-
-
-
-
-
-
-
 /* 
 =================  save task ==============================
 
@@ -442,6 +448,8 @@ function getTask() {
         list_container.innerHTML = retrive_task;
     }
 }
+
+
 
 getTask();
 no_task_message();
