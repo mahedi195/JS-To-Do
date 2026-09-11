@@ -20,27 +20,20 @@ console.log(date_class.value);
 
 */
 
-function update_progress()
-{
-const progress_line = document.querySelector('.progress_line');
-const pregress_count_and_circle = document.querySelector('.pregress_count_and_circle ');
+function update_progress() {
+    const progress_line = document.querySelector('.progress_line');
+    const pregress_count_and_circle = document.querySelector('.pregress_count_and_circle ');
 
 
-const total_task = list_container.querySelectorAll('li').length;
-const completed_task = list_container.querySelectorAll(' li.checked').length;
-let percentage = 0;
-if (total_task > 0)
-    percentage = (completed_task / total_task) * 100;
-progress_line.style.width = percentage + '%';
-pregress_count_and_circle.querySelector(' p').innerHTML = completed_task + '/' + total_task;
+    const total_task = list_container.querySelectorAll('li').length;
+    const completed_task = list_container.querySelectorAll(' li.checked').length;
+    let percentage = 0;
+    if (total_task > 0)
+        percentage = (completed_task / total_task) * 100;
+    progress_line.style.width = percentage + '%';
+    pregress_count_and_circle.querySelector(' p').innerHTML = completed_task + '/' + total_task;
 
 }
-
-
-
-
-
-
 
 
 
@@ -69,6 +62,7 @@ add_button.addEventListener('click', function (event) {
     span_task.innerHTML = user_task_input;
 
     list.append(span_task);
+
 
 
 
@@ -147,13 +141,14 @@ add_button.addEventListener('click', function (event) {
     priority_class.value = "";
 
 
+    task_class.focus();
+
+
     saveTask();
     no_task_message();
 
     update_progress();
 })
-
-
 
 
 
@@ -191,8 +186,8 @@ sort_priority_class.addEventListener('click', function (event) {
         })
 
 
-
     }
+
     else if (sort_priority_class.value == 'low_to_high') {
         task_arr.sort(function (a, b) {
             const priorityA = a.querySelector('.priorityValue').innerHTML;
@@ -219,10 +214,6 @@ sort_priority_class.addEventListener('click', function (event) {
 
 
 })
-
-
-
-
 
 
 
@@ -290,6 +281,9 @@ sort_by_date_class.addEventListener('click', function (event) {
 
 
 
+
+
+
 /*
 =================search task ============================
 
@@ -332,11 +326,19 @@ search_task_class.addEventListener('input', function (event) {
 
 
 
+
+
+
+
 /*
- ==============  task row- check, uncheck toggle
+ ==============  ===========================================
+ task row- check, uncheck toggle
                  delete single row(task)
 
+                 ========================================================
+
 */
+
 
 list_container.addEventListener('click', function (event) {
 
@@ -367,11 +369,16 @@ list_container.addEventListener('click', function (event) {
 
 
 
+
+
+
 /* =========================
 
                               Delete all
 
 ===================================== */
+
+
 
 const delete_all = document.querySelector('.delete_all');
 
@@ -391,6 +398,8 @@ delete_all.addEventListener('click', function (event) {
 
 
 
+
+
 /*    empty state message ********  =============  */
 
 function no_task_message() {
@@ -401,6 +410,8 @@ function no_task_message() {
     else no_taks_class.style.display = 'none';
 
 }
+
+
 
 
 
@@ -430,8 +441,14 @@ dark_button_class.addEventListener('click', function () {
 
 
 
+
+
 /* 
-=================  save task ==============================
+=================================================================
+
+                                     save task
+
+         ====================================================================
 
 
 */
