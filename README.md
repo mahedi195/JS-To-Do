@@ -2,6 +2,11 @@
 
 A JavaScript based web app for day to day life to do list
 
+
+**Vecel Live: **
+[Live Demo](https://js-to-do-nu.vercel.app/)
+
+
 **Features:**
 - Adding task with date and priority. without date or priority task can't be added .A alert will show- You have to add date or you have to add priority of task
 - Priority sorting -> High to Low or Low to High
@@ -12,7 +17,7 @@ A JavaScript based web app for day to day life to do list
 - when user want to delete a task , a conformation message show- **are you sure to delete this task?**. if user click on - ok, task will be deleted.
 - There are a button - **Delete All** button at last . using this button user can delete all task. before removing task, app show, a confirming message- **are you sure to delete  task**. if user click on ok, then all task will be deleted.
 - A progress bar, thar show, total task and completed task number. There are a dynamic progress bar. when user add or remove a task , it dynamically change
-
+- Deployed in vercel
 
 **Some screenshots**
 
