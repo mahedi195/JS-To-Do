@@ -1,4 +1,5 @@
 **To-Do List**
+
 A JavaScript based web app for day to day life to do list
 
 **Features:**
@@ -26,7 +27,7 @@ A JavaScript based web app for day to day life to do list
 **Progress Section**
 <img width="1365" height="767" alt="task progress section" src="https://github.com/user-attachments/assets/51423bcb-62b1-47bb-aed5-8b7bf58dfd3f" />
 
-**Input Section**
+**Input Section - alarming message to add text/date/priority before adding task**
 <img width="1365" height="766" alt="alert to enter text before add task" src="https://github.com/user-attachments/assets/8608eeec-4c72-4b13-92c1-846f4dd84532" />
 <img width="1362" height="764" alt="alert to add date before add task" src="https://github.com/user-attachments/assets/f691deb1-7e4f-425a-b5d3-ee089a008975" />
 <img width="1363" height="765" alt="alert to add priority before add task" src="https://github.com/user-attachments/assets/e1d27853-e943-401e-8d79-f355896e0dd0" />
