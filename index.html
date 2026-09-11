@@ -16,9 +16,10 @@
 
 
             <div class="project_name_and_toggle_image">
-                <h2>To-Do List
+                <h1>To-Do List
                     <img src="images/icon.png">
-                </h2>
+                </h1>
+
 
                 <button class="dark_mode_image"><img src="images/moon.jpg"></button>
             </div>
@@ -28,26 +29,18 @@
 
             <div class="progress_section">
 
-                <div class="text_and_progress_bar">
-
-
-                    <h2>Keep it up, bro!</h2>
-                    <div class="progress_bar">
-                        <div class="progress_done_task">
-
-                        </div>
-
+                <div class="text_and_progresss_line">
+                    <h2>keep it up,bro!!</h2>
+                    <div class="progress">
+                        <p class="progress_line"></p>
                     </div>
                 </div>
 
-
-                <div class="progress_circle">
+                <div class="pregress_count_and_circle">
                     <p>0/0</p>
-
                 </div>
-
             </div>
-            
+
 
 
 
@@ -79,6 +72,13 @@
                 </select>
 
 
+
+                <select class="sort_by_date">
+                    <option value="" selected disabled>Sort By Date</option>
+                    <option value="earliest_to_latest">Earliest → Latest</option>
+                    <option value="latest_to_earliest">Latest → Earliest</option>
+
+                </select>
 
                 <input class="search_task" placeholder="Search task...">
             </div>

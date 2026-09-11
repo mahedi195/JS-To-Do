@@ -34,18 +34,138 @@
 }
 
 
-.todo_app h2 {
+.todo_app h1 {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    /* margin-left: auto; */
 }
 
 
-.todo_app h2 img {
+.todo_app h1 img {
     width: 30px;
 
 
+}
+
+
+
+
+/*        dark mode ==================================== */
+
+
+
+.project_name_and_toggle_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+.project_name_and_toggle_image img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+
+.project_name_and_toggle_image .dark_mode_image {
+    border: none;
+    /* outline: 0; */
+    background: transparent;
+    cursor: pointer;
+    /* margin-left: auto; */
+    right: 0px;
+    position: absolute;
+}
+
+
+body.dark .todo_app{
+    background:black;
+    color: white;
+}
+
+
+body.dark .delete_all{
+    background-color: orange;
+    color: white;
+}
+
+
+
+body.dark .delete_all:hover{
+    background-color: rgb(207, 141, 17);
+}
+
+
+
+body.dark .row .list_container li.checked::after {
+    background-color: white;
+}
+
+
+.text_and_progresss_line{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.text_and_progresss_line h2{
+    margin-bottom: 20px;
+}
+
+
+
+
+/*
+
+===========================   progree bar section ========================
+
+*/
+
+.progress_section{
+    border: 1px solid orange;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+    gap: 30px;
+    MARGIN-BOTTOM: 30PX;
+    BORDER-RADIUS: 5PX;
+}
+
+
+.progress{
+    /* width: 100px; */
+    /* height: 10px; */
+    /* color: red; */
+    background: #9E9E9E;
+    /* flex: 1; */
+    height: 6px;
+    border-radius: 10px;
+}
+
+.progress_line{
+    background-color: orange;
+    width:0%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.pregress_count_and_circle{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 1px solid orange;
+    display: flex;
+    align-items: cne;
+    align-items: center;
+    justify-content: center;
+    background: orange;
+    font-size: 25px;
 }
 
 
@@ -67,22 +187,22 @@
 
 .input_section .user_task_input {
     flex: 1;
-    padding: 8px 12px;
+    padding: 5px 12px;
     font-size: 18px;
-    border-radius: 6px;
+    border-radius: 4px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
 }
 
 
 .input_section .user_date_input {
     width: 120px;
     font-size: small;
-    padding: 8px 12px;
+    padding: 5px 12px;
     /*  font-size: 20px;*/
-    border-radius: 6px;
+    border-radius: 4px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
     cursor: pointer;
 }
 
@@ -90,11 +210,11 @@
 
 .input_section .user_priority_option {
     width: 108px;
-    padding: 8px 12px;
-    font-size: 20px;
-    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 18px;
+    border-radius: 4px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
     cursor: pointer;
 }
 
@@ -122,13 +242,118 @@
 
 
 
+/*
+
+========================================   Sort Section ===================================
+
+*/
+
+
+/* ===============================
+sorting section 
+================================
+*/
+
+.sort_section {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+/* ==============================   priority sorting        =========================================== */
+
+
+.priorityValue {
+    width: 108px;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-radius: 6px;
+    outline: 0;
+    border: 1px solid #cdc6c6;
+}
+
+
+.sort_priority {
+    font-size: 18px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: 0;
+    border: 1px slod gray;
+    border: 1px solid #cdcccc;
+    cursor: pointer;
+}
+
+
+.priorityValue.highh {
+    background-color: red;
+    color: white;
+}
+
+
+.priorityValue.midd {
+    background-color: orange;
+    color: white;
+}
+
+
+
+.priorityValue.loww {
+    background-color: green;
+    color: white;
+}
+
+
+
+
+/*  ============================  Sort By Date ===================================*/
+
+
+.sort_by_date{
+      font-size: 18px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      outline: 0;
+      border: 1px solid #cdcccc;
+      outline: 0;
+      cursor: pointer;
+}
+
+.sort_by_date option{
+    cursor: pointer;
+
+}
+
+
+
+
+/*
+============= Search task ==============
+*/
+
+
+.search_task {
+    font-size: 17px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: 0;
+    border: 1px solid rgb(209, 208, 208);
+    flex: 1;
+}
+
+
+
+
 
 
 
 
 /*
 
-============  Head Line =====================
+============ ========================================================
+                                         
+                                         Head Line
+ 
+   ==============================================================
 
 */
 
@@ -152,17 +377,12 @@
 
 .headline .task {
     flex: 1;
-
     padding: 8px 12px;
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
-
+    border: 1px solid #cdc6c6;
     font-weight: bold;
-
-
-
 }
 
 .headline .last_date {
@@ -171,28 +391,19 @@
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
     font-weight: bold;
 }
 
 
 .headline .priority {
     width: 108px;
-
-
-
-
     padding: 8px 12px;
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
-
+    border: 1px solid #cdc6c6;
     font-weight: bold;
-
-
-
-
 }
 
 
@@ -202,12 +413,11 @@
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
     font-weight: bold;
     DISPLAY: FLEX;
     ALIGN-ITEMS: center;
     justify-content: center;
-
 }
 
 .headline {
@@ -215,8 +425,15 @@
 }
 
 
+
+
+
+
+
+
+
 /*
-================  List container row box ================
+================ ====================== List container row box  ==================================
 */
 
 .row .list_container li {
@@ -233,18 +450,18 @@
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
 }
 
 
 
 .row .list_container .date {
     width: 120px;
-    padding: 8px 12px;
+    padding: 11px 12px;
     font-size: small;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
 }
 
 
@@ -270,11 +487,11 @@
 
 .row .list_container .delete {
     width: 40px;
-    padding: 8px 12px;
+    padding: 5px 12px;
     font-size: 20px;
     border-radius: 6px;
     outline: 0;
-    border: 1px solid #bbb1b1;
+    border: 1px solid #cdc6c6;
     font-weight: bold;
     DISPLAY: FLEX;
     ALIGN-ITEMS: center;
@@ -340,7 +557,7 @@
     background-color: black;
 
     top: 50%;
-    left: 33px;
+    left: 30px;
     right: 0px;
 
 
@@ -352,102 +569,21 @@
 }
 
 
-/*   
-====================== delete button ====================
-*/
-
-
-.delete_all {
-    display: block;
-    margin-left: auto;
-    font-size: 20px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    outline: 0;
-    border: 1px solid #afacac;
-
-}
-
-
-
-.delete_all:hover {
-    background-color: rgb(201, 199, 199);
-}
-
-
-
-/* ===============================
-sorting section 
-================================
-*/
-
-.sort_section {
-    margin-bottom: 50px;
-    display: flex;
-    gap: 10px;
-}
-
-/*   sort priority */
-
-.priorityValue {
-    width: 108px;
-    padding: 8px 12px;
-    font-size: 20px;
-    border-radius: 6px;
-    outline: 0;
-    border: 1px solid #bbb1b1;
-}
-
-
-.sort_priority {
-    font-size: 18px;
-    padding: 5px 12px;
-    border-radius: 4px;
-    outline: 0;
-    border: 1px slod gray;
-    border: 1px solid #cdcccc;
-}
-
-
-.priorityValue.highh {
-    background-color: red;
-    color: white;
-}
-
-
-.priorityValue.midd {
-    background-color: orange;
-    color: white;
-}
-
-
-
-.priorityValue.loww {
-    background-color: green;
-    color: white;
-}
-
-
-
-/*
-============= Search task ==============
-*/
-
-
-.search_task {
-    font-size: 17px;
-    padding: 5px 12px;
-    border-radius: 4px;
-    outline: 0;
-    border: 1px solid rgb(209, 208, 208);
-}
 
 
 
 
 
 
-/*           no taks message show */
+
+
+
+/*        ===============================================
+   
+                            no taks message show
+
+
+=================================================*/
 
 
 
@@ -474,36 +610,26 @@ sorting section
 
 
 
-/*        dark mode ==================================== */
 
 
-
-.project_name_and_toggle_image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+/*   
+============================================ delete button =============================================
+*/
 
 
-.project_name_and_toggle_image img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
-
-
-
-.project_name_and_toggle_image .dark_mode_image {
-    border: none;
-    /* outline: 0; */
-    background: transparent;
-    cursor: pointer;
-
+.delete_all {
+    display: block;
+    margin-left: auto;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #afacac;
 
 }
 
 
-body.dark .todo_app{
-    background:black;
-    color: white;
+
+.delete_all:hover {
+    background-color: rgb(201, 199, 199);
 }

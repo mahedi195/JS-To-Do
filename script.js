@@ -14,6 +14,79 @@ console.log(date_class.value);
 
 
 
+/*
+
+====================           progress section        =======================================================
+
+*/
+
+function update_progress()
+{
+const progress_line = document.querySelector('.progress_line');
+const pregress_count_and_circle = document.querySelector('.pregress_count_and_circle ');
+
+
+const total_task = list_container.querySelectorAll('li').length;
+const completed_task = list_container.querySelectorAll(' li.checked').length;
+let percentage = 0;
+if (total_task > 0)
+    percentage = (completed_task / total_task) * 100;
+progress_line.style.width = percentage + '%';
+pregress_count_and_circle.querySelector(' p').innerHTML = completed_task + '/' + total_task;
+
+}
+
+/*
+
+=====================  sort by date =================
+
+*/
+
+
+const sort_by_date_class = document.querySelector('.sort_by_date');
+
+sort_by_date_class.addEventListener('click', function (event) {
+
+    const task_arr = [...list_container.querySelectorAll('li')];
+    if (sort_by_date_class.value == 'earliest_to_latest') {
+        task_arr.sort(function (a, b) {
+
+            const date1 = a.querySelector('.date').innerHTML;
+            const date2 = b.querySelector('.date').innerHTML;
+
+
+            return new Date(date1) - new Date(date2);
+
+
+        })
+
+        task_arr.forEach(function (row) {
+            list_container.append(row);
+        })
+    }
+    else if (sort_by_date_class.value == 'latest_to_earliest') {
+
+        task_arr.sort(function (a, b) {
+
+            const date1 = a.querySelector('.date').innerHTML;
+            const date2 = b.querySelector('.date').innerHTML;
+
+
+            return new Date(date2) - new Date(date1);
+
+
+        })
+
+        task_arr.forEach(function (row) {
+            list_container.append(row);
+        })
+
+
+    }
+
+
+})
+
 
 
 
@@ -128,16 +201,6 @@ search_task_class.addEventListener('input', function (event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* 
 
 =================   task addition ==========================
@@ -243,6 +306,8 @@ add_button.addEventListener('click', function (event) {
 
     saveTask();
     no_task_message();
+
+    update_progress();
 })
 
 
@@ -272,7 +337,9 @@ list_container.addEventListener('click', function (event) {
 
     saveTask();
     no_task_message();
+    update_progress();
 })
+
 
 
 
@@ -294,6 +361,7 @@ delete_all.addEventListener('click', function (event) {
 
     saveTask();
     no_task_message();
+    update_progress();
 })
 
 
@@ -323,18 +391,16 @@ const dark_button_class = document.querySelector('.dark_mode_image');
 console.log(dark_button_class);
 const dark_image = document.querySelector('.dark_mode_image img');
 
-
 dark_button_class.addEventListener('click', function () {
     document.body.classList.toggle('dark');
 
     if (document.body.classList.contains('dark'))
         dark_image.src = "images/sun.avif";
-    else dark_image.src = "images/moon.jpg";
+    else
+        dark_image.src = "images/moon.jpg";
 
 
 })
-
-
 
 
 
@@ -377,6 +443,6 @@ function getTask() {
 
 getTask();
 no_task_message();
-
+update_progress();
 
 
