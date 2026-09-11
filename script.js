@@ -216,7 +216,6 @@ sort_priority_class.addEventListener('click', function (event) {
     }
 
 
-    sort_priority_class.value = "";
 
 
 })
