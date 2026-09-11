@@ -328,7 +328,9 @@ list_container.addEventListener('click', function (event) {
 
     }
     else if (event.target.classList.contains('delete')) {
+
         const delete_task = confirm('Are you sure to delete this task ? ');
+        
         if (delete_task)
             event.target.parentElement.remove();
 
@@ -354,8 +356,8 @@ const delete_all = document.querySelector('.delete_all');
 
 delete_all.addEventListener('click', function (event) {
 
-
     const all_task_delete = confirm('Are you sure to delete all task ? ');
+
     if (all_task_delete)
         list_container.innerHTML = "";
 
