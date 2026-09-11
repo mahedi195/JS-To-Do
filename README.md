@@ -3,7 +3,9 @@
 A JavaScript based web app for day to day life to do list
 
 
-**Vecel Live: **
+
+**Vecel Live:**
+
 [https://js-to-do-nu.vercel.app/]
 
 
